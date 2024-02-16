@@ -1,0 +1,50 @@
+php vendor/bin/phpbench run --report=aggregate
++------------+-------------------+-----+------+-----+----------+-----------+--------+
+| benchmark  | subject           | set | revs | its | mem_peak | mode      | rstdev |
++------------+-------------------+-----+------+-----+----------+-----------+--------+
+| MonoBench  | benchUuidV4Before |     | 1    | 1   | 1.000mb  | 633.000μs | ±0.00% |
+| MonoBench  | benchUuidV4After  |     | 1    | 1   | 1.000mb  | 386.000μs | ±0.00% |
+| MultiBench | benchUuidV4Before |     | 1    | 1   | 1.000mb  | 7.000μs   | ±0.00% |
+| MultiBench | benchUuidV4After  |     | 1    | 1   | 1.000mb  | 5.000μs   | ±0.00% |
++------------+-------------------+-----+------+-----+----------+-----------+--------+
+
+php vendor/bin/phpbench run --report=aggregate --revs=100
++------------+-------------------+-----+------+-----+----------+-----------+--------+
+| benchmark  | subject           | set | revs | its | mem_peak | mode      | rstdev |
++------------+-------------------+-----+------+-----+----------+-----------+--------+
+| MonoBench  | benchUuidV4Before |     | 100  | 1   | 1.000mb  | 616.260μs | ±0.00% |
+| MonoBench  | benchUuidV4After  |     | 100  | 1   | 1.000mb  | 377.800μs | ±0.00% |
+| MultiBench | benchUuidV4Before |     | 100  | 1   | 1.000mb  | 0.700μs   | ±0.00% |
+| MultiBench | benchUuidV4After  |     | 100  | 1   | 1.000mb  | 0.460μs   | ±0.00% |
++------------+-------------------+-----+------+-----+----------+-----------+--------+
+
+php vendor/bin/phpbench run --report=aggregate --revs=10000
++------------+-------------------+-----+-------+-----+----------+-----------+--------+
+| benchmark  | subject           | set | revs  | its | mem_peak | mode      | rstdev |
++------------+-------------------+-----+-------+-----+----------+-----------+--------+
+| MonoBench  | benchUuidV4Before |     | 10000 | 1   | 1.000mb  | 631.257μs | ±0.00% |
+| MonoBench  | benchUuidV4After  |     | 10000 | 1   | 1.000mb  | 388.530μs | ±0.00% |
+| MultiBench | benchUuidV4Before |     | 10000 | 1   | 1.000mb  | 0.628μs   | ±0.00% |
+| MultiBench | benchUuidV4After  |     | 10000 | 1   | 1.000mb  | 0.390μs   | ±0.00% |
++------------+-------------------+-----+-------+-----+----------+-----------+--------+
+
+php vendor/bin/phpbench run --report=aggregate --iterations=100
++------------+-------------------+-----+------+-----+----------+-----------+---------+
+| benchmark  | subject           | set | revs | its | mem_peak | mode      | rstdev  |
++------------+-------------------+-----+------+-----+----------+-----------+---------+
+| MonoBench  | benchUuidV4Before |     | 1    | 100 | 1.000mb  | 624.088μs | ±2.84%  |
+| MonoBench  | benchUuidV4After  |     | 1    | 100 | 1.000mb  | 387.356μs | ±27.74% |
+| MultiBench | benchUuidV4Before |     | 1    | 100 | 1.000mb  | 7.607μs   | ±24.15% |
+| MultiBench | benchUuidV4After  |     | 1    | 100 | 1.000mb  | 5.033μs   | ±22.89% |
++------------+-------------------+-----+------+-----+----------+-----------+---------+
+
+php vendor/bin/phpbench run --report=aggregate --revs=100 --iterations=100
++------------+-------------------+-----+------+-----+----------+-----------+---------+
+| benchmark  | subject           | set | revs | its | mem_peak | mode      | rstdev  |
++------------+-------------------+-----+------+-----+----------+-----------+---------+
+| MonoBench  | benchUuidV4Before |     | 100  | 100 | 1.000mb  | 618.662μs | ±0.44%  |
+| MonoBench  | benchUuidV4After  |     | 100  | 100 | 1.000mb  | 377.381μs | ±0.68%  |
+| MultiBench | benchUuidV4Before |     | 100  | 100 | 1.000mb  | 0.734μs   | ±19.14% |
+| MultiBench | benchUuidV4After  |     | 100  | 100 | 1.000mb  | 0.463μs   | ±16.80% |
++------------+-------------------+-----+------+-----+----------+-----------+---------+
+
